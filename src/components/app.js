@@ -3,6 +3,8 @@ import { FilterSection } from './filter-section';
 import { ProductDisplaySection } from './product-display-section';
 import { MODEL } from '../model';
 
+let PRODUCTS = [];
+
 class App extends React.Component{
    
     constructor() {
@@ -10,10 +12,10 @@ class App extends React.Component{
         super();
         this.handleFilterSelect = this.handleFilterSelect.bind( this );
         
-        this.products = [];
+        this.productsListed = PRODUCTS;
         this.state = {
             
-            isProductsFetched: false
+            isProductsFetched: false,
         };
     }
     
@@ -25,7 +27,8 @@ class App extends React.Component{
         getProductsPromise
             .then( products => {
             
-                self.products = products;
+                PRODUCTS = products;
+                this.productsListed = PRODUCTS;
                 
                 self.setState( {
                     
@@ -35,8 +38,21 @@ class App extends React.Component{
             } );
     }
     
-    handleFilterSelect() {
+    handleFilterSelect( productSize = 'ALL') {
         
+        if ( productSize === 'ALL' ) {
+            
+            this.productsListed = PRODUCTS;
+        }
+        else {
+        
+            this.productsListed = PRODUCTS.filter( product => 
+            
+                product.size.indexOf( productSize ) !== -1
+            );
+        }
+        
+        this.forceUpdate();
         
     }
     
@@ -51,9 +67,8 @@ class App extends React.Component{
         return (
        
             <div id="dt-code-test-app">
-                <h1>DT Code Test</h1>
                 <FilterSection onFilterSelect={ this.handleFilterSelect } />
-                <ProductDisplaySection products={ this.products } />
+                <ProductDisplaySection products={ this.productsListed } />
             </div>
         );
     }

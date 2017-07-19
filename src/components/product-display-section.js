@@ -5,19 +5,19 @@ class ProductPane extends React.Component {
     
     renderProductBadges( isSale = false, isExclusive = false ) {
         
-        let saleTag = ( isSale === true ) 
+        let saleBadge = ( isSale === true ) 
             ? <div className="badge sale-badge">Sale</div>
             : null;
         
-        let exclusiveTag = ( isExclusive === true ) 
+        let exclusiveBadge = ( isExclusive === true ) 
             ? <div className="badge exclusive-badge">Exclusive</div>
             : null;
         
         return (
 
             <div className="product-badges">
-                { saleTag }
-                { exclusiveTag }
+                { saleBadge }
+                { exclusiveBadge }
             </div>
         );
     }
@@ -39,9 +39,8 @@ class ProductPane extends React.Component {
                     ) 
                 }
                 <div className="product-info">
-
                     <div className="product-name">
-                    { this.props.productName }
+                        { this.props.productName }
                     </div>
                     <div className="product-price">
                         { this.props.productPrice }
@@ -56,14 +55,12 @@ class ProductPane extends React.Component {
 class ProductDisplaySection extends React.Component {
     
     render() {
-        console.log( 2, this.props.products );
-        
+
         return (
             
             <section id="product-display-section">
                 <ul>
                 {
-                    
                     this.props.products.map( product => {
                         
                         let productImageLink = CONFIG.productImagePath

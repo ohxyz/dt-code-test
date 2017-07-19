@@ -12,10 +12,29 @@ $default-gap: 8px;
     font-family: arial, sans-serif;
 }
 
+#filter-section {
+    
+    background-color: #def1f4;
+    display: flex;
+    align-items: center;
+    padding: $default-gap;
+    
+    #filter-title {
+        
+        flex: 1;
+        font-size: 150%;
+    }
+    
+    #filter-box {
+        flex: 1;
+        text-align: right;
+    }
+}
+
 #product-display-section {
     
-    border-top: $default-border;
     border-left: $default-border;
+    margin-top: $default-gap;
     
     li {
         display: inline-block;
@@ -39,7 +58,6 @@ $default-gap: 8px;
                     
                 }
             }
-            
 
             .product-badges {
             
@@ -141,6 +159,11 @@ $default-gap: 8px;
                 
                 height: 320px;
             }
+        }
+        
+        li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4) {
+            
+            border-top: $default-border;
         }
         
     }
