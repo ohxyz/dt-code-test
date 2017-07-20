@@ -101,6 +101,12 @@ $default-gap: 8px;
 
         }
     }
+    
+            
+    li:nth-child(1) {
+        
+        border-top: $default-border;
+    }
 }
 
 
@@ -120,6 +126,11 @@ $default-gap: 8px;
                 
                 height: 60px;
             }
+        }
+        
+        li:nth-child(1), li:nth-child(2) {
+        
+            border-top: $default-border;
         }
     }        
 }
@@ -143,6 +154,11 @@ $default-gap: 8px;
             }
         }
         
+        li:nth-child(1), li:nth-child(2), li:nth-child(3) {
+        
+            border-top: $default-border;
+        }
+        
     }
 }
 
@@ -162,7 +178,7 @@ $default-gap: 8px;
         }
         
         li:nth-child(1), li:nth-child(2), li:nth-child(3), li:nth-child(4) {
-            
+        
             border-top: $default-border;
         }
         
