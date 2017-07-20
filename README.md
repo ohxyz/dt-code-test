@@ -37,7 +37,9 @@ Prerequistes: Node.js, React, Git
 
 5. ```C:\dt-code-test>git pull origin master```
 
-6. ```C:\dt-code-test>npm run start```
+6. ```C:\dt-code-test>sass src\style\scss\main.scss src\style\index.css```
+
+7. ```C:\dt-code-test>npm run start```
 
 ## Build
 
