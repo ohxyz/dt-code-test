@@ -1,6 +1,6 @@
 # AKQA Code Test
 
-Demo: http://ademo.info/dt-code-test
+Demo: http://www.runademo.com/dt-code-test
 
 
 ## Introduction
